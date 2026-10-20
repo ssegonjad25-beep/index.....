@@ -1,0 +1,2023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | Shamirah Electronics Company</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fb;
+    color:#222;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+    background:#071a35;
+    color:white;
+    padding:9px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:14px;
+}
+
+.topbar span{
+    margin-right:18px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.1);
+}
+
+.navbar{
+    width:90%;
+    max-width:1250px;
+    min-height:75px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+
+/* LOGO */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#d4a017;
+    color:#071a35;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:19px;
+}
+
+.logo-text h2{
+    color:#071a35;
+    font-size:20px;
+}
+
+.logo-text p{
+    color:#d4a017;
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+
+/* NAVIGATION */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#17233a;
+    font-weight:bold;
+    font-size:14px;
+    padding:9px 10px;
+    border-radius:5px;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    background:#071a35;
+    color:white;
+}
+
+.cart-button{
+    background:#d4a017 !important;
+    color:#071a35 !important;
+    position:relative;
+}
+
+.cart-count{
+    position:absolute;
+    top:-8px;
+    right:-5px;
+    background:#e53935;
+    color:white;
+    width:21px;
+    height:21px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:11px;
+}
+
+
+/* MOBILE MENU */
+
+.menu-btn{
+    display:none;
+    background:#071a35;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:5px;
+    font-size:23px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:410px;
+
+    background:
+        linear-gradient(
+            rgba(3,17,38,.80),
+            rgba(3,17,38,.80)
+        ),
+        url("hero.PNG")
+        center/cover;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    color:white;
+    padding:50px 20px;
+}
+
+.hero-content{
+    max-width:850px;
+    animation:fadeUp 1s ease;
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#d4a017;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:18px;
+}
+
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
+section{
+    padding:70px 6%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    color:#071a35;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#666;
+    max-width:700px;
+    margin:auto;
+}
+
+
+/* =========================
+   FILTER BUTTONS
+========================= */
+
+.filter-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:35px;
+}
+
+.filter-btn{
+    background:white;
+    color:#071a35;
+    border:1px solid #d5dbe5;
+    padding:10px 18px;
+    border-radius:25px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+    background:#d4a017;
+    color:#071a35;
+    border-color:#d4a017;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-grid{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:22px;
+}
+
+.gallery-item{
+    position:relative;
+    height:280px;
+    border-radius:12px;
+    overflow:hidden;
+    background:#ddd;
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.08);
+
+    animation:galleryShow .5s ease;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.5s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
+}
+
+.gallery-overlay{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+
+    padding:25px 20px 18px;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.85)
+        );
+
+    transform:translateY(10px);
+    transition:.3s;
+}
+
+.gallery-item:hover .gallery-overlay{
+    transform:translateY(0);
+}
+
+.gallery-overlay h3{
+    font-size:19px;
+    margin-bottom:3px;
+}
+
+.gallery-overlay p{
+    font-size:13px;
+    color:#e2e2e2;
+}
+
+.view-btn{
+    margin-top:10px;
+    background:#d4a017;
+    color:#071a35;
+    border:none;
+    padding:8px 14px;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+
+/* =========================
+   NO RESULTS
+========================= */
+
+.no-results{
+    text-align:center;
+    padding:40px;
+    color:#777;
+    display:none;
+}
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.92);
+
+    z-index:3000;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+}
+
+.lightbox.show{
+    display:flex;
+}
+
+.lightbox-content{
+    max-width:950px;
+    width:100%;
+    text-align:center;
+    animation:zoomIn .3s ease;
+}
+
+.lightbox img{
+    max-width:100%;
+    max-height:75vh;
+    border-radius:8px;
+    box-shadow:0 10px 50px rgba(0,0,0,.5);
+}
+
+.lightbox-title{
+    color:white;
+    margin-top:15px;
+}
+
+.lightbox-title h3{
+    color:#d4a017;
+    font-size:23px;
+}
+
+.lightbox-title p{
+    color:#ddd;
+}
+
+.close-lightbox{
+    position:absolute;
+    top:20px;
+    right:30px;
+
+    background:#d4a017;
+    color:#071a35;
+
+    border:none;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    font-size:25px;
+    font-weight:bold;
+}
+
+.lightbox-nav{
+    position:absolute;
+    left:0;
+    right:0;
+
+    top:50%;
+
+    display:flex;
+    justify-content:space-between;
+
+    padding:0 25px;
+}
+
+.lightbox-nav button{
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:50%;
+
+    background:white;
+    color:#071a35;
+
+    font-size:24px;
+
+    transition:.3s;
+}
+
+.lightbox-nav button:hover{
+    background:#d4a017;
+}
+
+
+/* =========================
+   GALLERY INFO
+========================= */
+
+.info-section{
+    background:#071a35;
+    color:white;
+}
+
+.info-grid{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+}
+
+.info-card{
+    text-align:center;
+    padding:25px;
+}
+
+.info-icon{
+    font-size:40px;
+    color:#d4a017;
+    margin-bottom:12px;
+}
+
+.info-card h3{
+    margin-bottom:8px;
+}
+
+.info-card p{
+    color:#c8d1df;
+    font-size:14px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    max-width:1150px;
+    margin:auto;
+
+    background:
+        linear-gradient(
+            rgba(7,26,53,.94),
+            rgba(7,26,53,.94)
+        ),
+        url("https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1400&q=80")
+        center/cover;
+
+    border-radius:15px;
+
+    padding:55px 30px;
+
+    text-align:center;
+    color:white;
+}
+
+.cta h2{
+    color:#d4a017;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.cta p{
+    color:#d8dee8;
+    max-width:700px;
+    margin:0 auto 22px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 23px;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.btn-gold{
+    background:#d4a017;
+    color:#071a35;
+    transition:.3s;
+}
+
+.btn-gold:hover{
+    background:#e5b52b;
+    transform:translateY(-3px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#041126;
+    color:white;
+    padding:55px 6% 20px;
+}
+
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:
+        2fr 1fr 1fr 1.5fr;
+
+    gap:35px;
+}
+
+.footer-col h3{
+    color:#d4a017;
+    margin-bottom:18px;
+}
+
+.footer-col p{
+    color:#b9c3d2;
+    font-size:14px;
+    margin-bottom:9px;
+}
+
+.footer-links{
+    list-style:none;
+}
+
+.footer-links li{
+    margin:9px 0;
+}
+
+.footer-links a{
+    color:#b9c3d2;
+    font-size:14px;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#d4a017;
+    padding-left:4px;
+}
+
+.footer-bottom{
+    max-width:1200px;
+    margin:40px auto 0;
+
+    padding-top:20px;
+
+    border-top:1px solid #26344c;
+
+    text-align:center;
+
+    color:#8d99aa;
+    font-size:13px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes galleryShow{
+
+    from{
+        opacity:0;
+        transform:scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+@keyframes zoomIn{
+
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1050px){
+
+    .nav-links{
+        position:absolute;
+        top:75px;
+        left:0;
+        width:100%;
+
+        background:white;
+
+        display:none;
+        flex-direction:column;
+
+        padding:20px;
+
+        box-shadow:
+            0 10px 20px rgba(0,0,0,.1);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .nav-links a{
+        width:100%;
+        text-align:center;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .gallery-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .info-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .topbar{
+        flex-direction:column;
+        gap:5px;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    section{
+        padding:50px 5%;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-item{
+        height:260px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .lightbox-nav{
+        padding:0 10px;
+    }
+
+    .lightbox-nav button{
+        width:42px;
+        height:42px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<div class="topbar">
+
+    <div>
+        <span>📍 Kyotera, Uganda</span>
+        <span>📞 +256 708111425</span>
+    </div>
+
+    <div>
+        <span>✉️ info@shamirah.com</span>
+        <span>Mon - Sat</span>
+    </div>
+
+</div>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+<nav class="navbar">
+
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-icon">
+            SEC
+        </div>
+
+        <div class="logo-text">
+
+            <h2>SHAMIRAH</h2>
+
+            <p>
+                ELECTRONICS COMPANY
+            </p>
+
+        </div>
+
+    </a>
+
+
+    <button
+        class="menu-btn"
+        onclick="toggleMenu()"
+    >
+        ☰
+    </button>
+
+
+    <ul
+        class="nav-links"
+        id="navLinks"
+    >
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="about.html">
+                About Us
+            </a>
+        </li>
+
+        <li>
+            <a href="products.html">
+                Products
+            </a>
+        </li>
+
+        <li>
+            <a href="services.html">
+                Services
+            </a>
+        </li>
+
+        <li>
+            <a href="offers.html">
+                Offers
+            </a>
+        </li>
+
+        <li>
+            <a
+                href="gallery.html"
+                class="active"
+            >
+                Gallery
+            </a>
+        </li>
+
+        <li>
+            <a href="faq.html">
+                FAQ & Support
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html">
+                Contact
+            </a>
+        </li>
+
+        <li>
+
+            <a
+                href="products.html"
+                class="cart-button"
+            >
+
+                🛒 Cart
+
+                <span
+                    class="cart-count"
+                    id="cartCount"
+                >
+                    0
+                </span>
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Our <span>Gallery</span>
+        </h1>
+
+        <p>
+            Explore our collection of electronics, products,
+            technology solutions, showroom displays and
+            professional services.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section id="gallery">
+
+    <div class="section-title">
+
+        <h2>Explore Our Gallery</h2>
+
+        <p>
+            Browse different categories and click any image
+            to view it in full screen.
+        </p>
+
+    </div>
+
+
+    <!-- FILTER BUTTONS -->
+
+    <div class="filter-buttons">
+
+        <button
+            class="filter-btn active"
+            data-filter="all"
+        >
+            All
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="phones"
+        >
+            Smartphones
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="computers"
+        >
+            Computers
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="tv"
+        >
+            TVs
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="audio"
+        >
+            Audio
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="appliances"
+        >
+            Appliances
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="services"
+        >
+            Services
+        </button>
+
+    </div>
+
+
+    <!-- GALLERY GRID -->
+
+    <div
+        class="gallery-grid"
+        id="galleryGrid"
+    >
+
+
+        <!-- 1 -->
+
+        <div
+            class="gallery-item"
+            data-category="phones"
+        >
+
+            <img
+                src="image 1.JPEG"
+                alt="Modern Smartphone"
+            >
+
+            <div class="gallery-overlay">
+
+                <h3>
+                    Modern Smartphones
+                </h3>
+
+                <p>
+                    Mobile technology and smart devices
+                </p>
+
+                <button
+                    class="view-btn"
+                    onclick="openLightbox(this)"
+                >
+                    View Image
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2 -->
+
+        <div
+            class="gallery-item"
+            data-category="computers"
+        >
+
+            <img
+                src="image 2.JPEG"
+                alt="Professional Laptop"
+            >
+
+            <div class="gallery-overlay">
+
+                <h3>
+                    Professional Laptops
+                </h3>
+
+                <p>
+                    Computing devices for work and study
+                </p>
+
+                <button
+                    class="view-btn"
+                    onclick="openLightbox(this)"
+                >
+                    View Image
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 3 -->
+
+        <div
+            class="gallery-item"
+            data-category="tv"
+        >
+
+            <img
+                src="image 3.JPEG"
+                alt="Smart Television"
+            >
+
+            <div class="gallery-overlay">
+
+                <h3>
+                    Smart Televisions
+                </h3>
+
+                <p>
+                    Modern home entertainment systems
+                </p>
+
+                <button
+                    class="view-btn"
+                    onclick="openLightbox(this)"
+                >
+                    View Image
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 4 -->
+
+        <div
+            class="gallery-item"
+            data-category="audio"
+        >
+
+            <img
+                src="image 4.JPEG"
+                alt="Wireless Headphones"
+            >
+
+            <div class="gallery-overlay">
+
+                <h3>
+                    Wireless Audio
+                </h3>
+
+                <p>
+                    Headphones and personal audio devices
+                </p>
+
+                <button
+                    class="view-btn"
+                    onclick="openLightbox(this)"
+                >
+                    View Image
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 5 -->
+
+        <div
+            class="gallery-item"
+            data-category="appliances"
+        >
+
+            <img
+                src="image 5.JPEG"
+                alt="Refrigerator"
+            >
+
+            <div class="gallery-overlay">
+
+                <h3>
+                    Home Appliances
+                </h3>
+
+                <p>
+                    Appliances designed for modern homes
+                </p>
+
+                <button
+                    class="view-btn"
+                    onclick="openLightbox(this)"
+                >
+                    View Image
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 6 -->
+
+        <div
+            class="gallery-item"
+            data-category="audio"
+        >
+
+            <img
+                src="image 6.JPEG"
+                alt="Bluetooth Speaker"
+            >
+
+            <div class="gallery-overlay">
+
+                <h3>
+                    Bluetooth Speakers
+                </h3>
+
+                <p>
+                    Portable entertainment and sound systems
+                </p>
+
+                <button
+                    class="view-btn"
+                    onclick="openLightbox(this)"
+                >
+                    View Image
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 7 -->
+
+        <div
+            class="gallery-item"
+            data-category="computers"
+        >
+
+            <img
+                src="image 7.JPEG"
+                alt="Laptop workspace"
+            >
+
+            <div class="gallery-overlay">
+
+                <h3>
+                    Computer Workstations
+                </h3>
+
+                <p>
+                    Technology for productivity and business
+                </p>
+
+                <button
+                    class="view-btn"
+                    onclick="openLightbox(this)"
+                >
+                    View Image
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 8 -->
+
+        <div
+            class="gallery-item"
+            data-category="phones"
+        >
+
+            <img
+                src="image 8.JPEG"
+                alt="Smartphone technology"
+            >
+
+            <div class="gallery-overlay">
+
+                <h3>
+                    Mobile Technology
+                </h3>
+
+                <p>
+                    Smart devices and mobile accessories
+                </p>
+
+                <button
+                    class="view-btn"
+                    onclick="openLightbox(this)"
+                >
+                    View Image
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 9 -->
+
+        <div
+            class="gallery-item"
+            data-category="services"
+        >
+
+            <img
+                src="image 9.JPEG"
+                alt="Electronics technician"
+            >
+
+            <div class="gallery-overlay">
+
+                <h3>
+                    Technical Services
+                </h3>
+
+                <p>
+                    Professional repair and technical support
+                </p>
+
+                <button
+                    class="view-btn"
+                    onclick="openLightbox(this)"
+                >
+                    View Image
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="no-results"
+        id="noResults"
+    >
+        No images found in this category.
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY INFORMATION
+========================= -->
+
+<section class="info-section">
+
+    <div class="section-title">
+
+        <h2 style="color:white;">
+            What You Can Explore
+        </h2>
+
+        <p style="color:#cbd4e2;">
+            Our gallery presents different areas of our
+            electronics business.
+        </p>
+
+    </div>
+
+
+    <div class="info-grid">
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                📱
+            </div>
+
+            <h3>
+                Electronics
+            </h3>
+
+            <p>
+                Explore smartphones, computers, televisions,
+                audio equipment and other electronics.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                🔧
+            </div>
+
+            <h3>
+                Services
+            </h3>
+
+            <p>
+                View examples representing electronics repair,
+                maintenance and technical support.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                🏪
+            </div>
+
+            <h3>
+                Technology Experience
+            </h3>
+
+            <p>
+                Discover the type of technology environment
+                associated with our products and services.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section>
+
+    <div class="cta">
+
+        <h2>
+            Find Your Next Device
+        </h2>
+
+        <p>
+            Explore our product collection and discover
+            electronics suitable for home, education and business.
+        </p>
+
+        <a
+            href="products.html"
+            class="btn btn-gold"
+        >
+            Browse Products
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div class="footer-col">
+
+            <h3>
+                Shamirah Electronics
+            </h3>
+
+            <p>
+                Smart Technology. Simple Life.
+            </p>
+
+            <p>
+                Professional electronics products,
+                services and technology solutions.
+            </p>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <ul class="footer-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="products.html">
+                        Products
+                    </a>
+                </li>
+
+                <li>
+                    <a href="services.html">
+                        Services
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h3>
+                More Pages
+            </h3>
+
+            <ul class="footer-links">
+
+                <li>
+                    <a href="offers.html">
+                        Offers
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gallery.html">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="faq.html">
+                        FAQ & Support
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h3>
+                Contact Us
+            </h3>
+
+            <p>
+                📍 Kyotera, Uganda
+            </p>
+
+            <p>
+                📞 +256 708111425
+            </p>
+
+            <p>
+                ✉️ info@shamirah.com
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Shamirah Electronics Company.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     LIGHTBOX
+========================= -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+>
+
+
+    <button
+        class="close-lightbox"
+        onclick="closeLightbox()"
+    >
+        ×
+    </button>
+
+
+    <div class="lightbox-content">
+
+        <img
+            id="lightboxImage"
+            src=""
+            alt=""
+        >
+
+        <div class="lightbox-title">
+
+            <h3 id="lightboxTitle">
+            </h3>
+
+            <p id="lightboxDescription">
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="lightbox-nav">
+
+        <button
+            onclick="previousImage()"
+        >
+            ❮
+        </button>
+
+        <button
+            onclick="nextImage()"
+        >
+            ❯
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+    const nav =
+        document.getElementById("navLinks");
+
+    nav.classList.toggle("show");
+
+}
+
+
+/* =========================
+   CART COUNT
+========================= */
+
+function updateCartCount(){
+
+    let cart =
+        JSON.parse(
+            localStorage.getItem("shamirahCart") || "[]"
+        );
+
+    let total = cart.reduce(
+        function(sum,item){
+
+            return sum + (item.quantity || 1);
+
+        },
+        0
+    );
+
+    document.getElementById("cartCount")
+        .textContent = total;
+
+}
+
+updateCartCount();
+
+
+/* =========================
+   GALLERY FILTER
+========================= */
+
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+const galleryItems =
+    document.querySelectorAll(".gallery-item");
+
+const noResults =
+    document.getElementById("noResults");
+
+
+filterButtons.forEach(function(button){
+
+    button.addEventListener(
+        "click",
+        function(){
+
+            filterButtons.forEach(function(btn){
+
+                btn.classList.remove("active");
+
+            });
+
+            this.classList.add("active");
+
+
+            const filter =
+                this.getAttribute("data-filter");
+
+            let visibleCount = 0;
+
+
+            galleryItems.forEach(function(item){
+
+                const category =
+                    item.getAttribute("data-category");
+
+
+                if(
+                    filter === "all" ||
+                    category === filter
+                ){
+
+                    item.style.display = "block";
+
+                    visibleCount++;
+
+                }else{
+
+                    item.style.display = "none";
+
+                }
+
+            });
+
+
+            if(visibleCount === 0){
+
+                noResults.style.display = "block";
+
+            }else{
+
+                noResults.style.display = "none";
+
+            }
+
+        }
+    );
+
+});
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+let currentImage = 0;
+
+let visibleItems = [];
+
+
+function refreshVisibleItems(){
+
+    visibleItems =
+        Array.from(galleryItems)
+        .filter(function(item){
+
+            return item.style.display !== "none";
+
+        });
+
+}
+
+
+function openLightbox(button){
+
+    refreshVisibleItems();
+
+
+    const item =
+        button.closest(".gallery-item");
+
+
+    currentImage =
+        visibleItems.indexOf(item);
+
+
+    showLightboxImage();
+
+}
+
+
+function showLightboxImage(){
+
+    if(
+        currentImage < 0 ||
+        currentImage >= visibleItems.length
+    ){
+        return;
+    }
+
+
+    const item =
+        visibleItems[currentImage];
+
+
+    const image =
+        item.querySelector("img");
+
+
+    const title =
+        item.querySelector("h3");
+
+
+    const description =
+        item.querySelector("p");
+
+
+    document.getElementById(
+        "lightboxImage"
+    ).src = image.src;
+
+
+    document.getElementById(
+        "lightboxImage"
+    ).alt = image.alt;
+
+
+    document.getElementById(
+        "lightboxTitle"
+    ).textContent =
+        title.textContent;
+
+
+    document.getElementById(
+        "lightboxDescription"
+    ).textContent =
+        description.textContent;
+
+
+    document.getElementById(
+        "lightbox"
+    ).classList.add("show");
+
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function closeLightbox(){
+
+    document.getElementById(
+        "lightbox"
+    ).classList.remove("show");
+
+
+    document.body.style.overflow = "";
+
+}
+
+
+function nextImage(){
+
+    refreshVisibleItems();
+
+    if(visibleItems.length === 0){
+        return;
+    }
+
+    currentImage++;
+
+    if(
+        currentImage >= visibleItems.length
+    ){
+        currentImage = 0;
+    }
+
+    showLightboxImage();
+
+}
+
+
+function previousImage(){
+
+    refreshVisibleItems();
+
+    if(visibleItems.length === 0){
+        return;
+    }
+
+    currentImage--;
+
+    if(currentImage < 0){
+
+        currentImage =
+            visibleItems.length - 1;
+
+    }
+
+    showLightboxImage();
+
+}
+
+
+/* =========================
+   KEYBOARD CONTROLS
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        const lightbox =
+            document.getElementById("lightbox");
+
+
+        if(
+            !lightbox.classList.contains("show")
+        ){
+            return;
+        }
+
+
+        if(event.key === "Escape"){
+
+            closeLightbox();
+
+        }
+
+
+        if(event.key === "ArrowRight"){
+
+            nextImage();
+
+        }
+
+
+        if(event.key === "ArrowLeft"){
+
+            previousImage();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   CLOSE MENU AFTER LINK
+========================= */
+
+document.querySelectorAll(
+    ".nav-links a"
+).forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        function(){
+
+            document
+                .getElementById("navLinks")
+                .classList.remove("show");
+
+        }
+    );
+
+});
+
+
+/* =========================
+   CLOSE LIGHTBOX OUTSIDE IMAGE
+========================= */
+
+document.getElementById("lightbox")
+.addEventListener(
+    "click",
+    function(event){
+
+        if(event.target === this){
+
+            closeLightbox();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>

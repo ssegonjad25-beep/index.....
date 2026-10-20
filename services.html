@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Shamirah Electronics Company</title>
+
+<style>
+/* ==============================
+   BASIC RESET
+================================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fb;
+    color:#222;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
+}
+
+/* ==============================
+   TOP BAR
+================================= */
+.topbar{
+    background:#071a35;
+    color:white;
+    padding:9px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:14px;
+}
+
+.topbar span{
+    margin-right:20px;
+}
+
+/* ==============================
+   HEADER
+================================= */
+header{
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.1);
+}
+
+.navbar{
+    width:90%;
+    max-width:1250px;
+    margin:auto;
+    min-height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#d4a017;
+    color:#071a35;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.logo-text h2{
+    color:#071a35;
+    font-size:20px;
+}
+
+.logo-text p{
+    color:#d4a017;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+/* NAVIGATION */
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    list-style:none;
+}
+
+.nav-links a{
+    padding:9px 11px;
+    color:#17233a;
+    font-size:14px;
+    font-weight:bold;
+    border-radius:5px;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    background:#071a35;
+    color:white;
+}
+
+.cart-button{
+    position:relative;
+    background:#d4a017 !important;
+    color:#071a35 !important;
+}
+
+.cart-count{
+    position:absolute;
+    top:-8px;
+    right:-5px;
+    background:#e53935;
+    color:white;
+    width:21px;
+    height:21px;
+    border-radius:50%;
+    font-size:11px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* MOBILE MENU */
+.menu-btn{
+    display:none;
+    border:none;
+    background:#071a35;
+    color:white;
+    font-size:24px;
+    padding:7px 12px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* ==============================
+   HERO
+================================= */
+.hero{
+    min-height:430px;
+    background:
+        linear-gradient(rgba(3,17,38,.78),rgba(3,17,38,.78)),
+        url("https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:50px 20px;
+}
+
+.hero-content{
+    max-width:850px;
+    animation:fadeUp 1s ease;
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#d4a017;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:700px;
+    margin:0 auto 25px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    border:none;
+    cursor:pointer;
+    padding:13px 23px;
+    border-radius:6px;
+    font-weight:bold;
+    transition:.3s;
+    display:inline-block;
+}
+
+.btn-gold{
+    background:#d4a017;
+    color:#071a35;
+}
+
+.btn-gold:hover{
+    transform:translateY(-3px);
+    background:#e4b52c;
+}
+
+.btn-outline{
+    border:2px solid white;
+    color:white;
+    background:transparent;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:#071a35;
+}
+
+/* ==============================
+   GENERAL SECTION
+================================= */
+section{
+    padding:70px 6%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    color:#071a35;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    max-width:700px;
+    margin:auto;
+    color:#666;
+}
+
+/* ==============================
+   SERVICE CARDS
+================================= */
+.services-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.service-card{
+    background:white;
+    border-radius:12px;
+    padding:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.35s;
+    position:relative;
+    overflow:hidden;
+}
+
+.service-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:#d4a017;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.service-icon{
+    width:65px;
+    height:65px;
+    background:#eef3fa;
+    color:#071a35;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.service-card h3{
+    color:#071a35;
+    margin-bottom:10px;
+    font-size:21px;
+}
+
+.service-card p{
+    color:#666;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.service-list{
+    list-style:none;
+    margin-bottom:20px;
+}
+
+.service-list li{
+    font-size:14px;
+    margin:8px 0;
+}
+
+.service-list li::before{
+    content:"✓";
+    color:#d4a017;
+    font-weight:bold;
+    margin-right:8px;
+}
+
+/* ==============================
+   WHY CHOOSE US
+================================= */
+.why-section{
+    background:#071a35;
+    color:white;
+}
+
+.why-grid{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.why-card{
+    text-align:center;
+    padding:25px 15px;
+}
+
+.why-icon{
+    font-size:38px;
+    color:#d4a017;
+    margin-bottom:15px;
+}
+
+.why-card h3{
+    margin-bottom:8px;
+}
+
+.why-card p{
+    color:#ccd5e3;
+    font-size:14px;
+}
+
+/* ==============================
+   BOOKING SECTION
+================================= */
+.booking-section{
+    background:white;
+}
+
+.booking-container{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1.4fr;
+    gap:35px;
+    align-items:start;
+}
+
+.booking-info{
+    background:#071a35;
+    color:white;
+    padding:35px;
+    border-radius:12px;
+}
+
+.booking-info h2{
+    color:#d4a017;
+    margin-bottom:15px;
+}
+
+.booking-info p{
+    color:#d5dce7;
+    margin-bottom:25px;
+}
+
+.contact-item{
+    display:flex;
+    gap:12px;
+    margin:18px 0;
+}
+
+.contact-item strong{
+    display:block;
+    color:#d4a017;
+}
+
+.booking-form{
+    background:#f8f9fc;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:bold;
+    font-size:14px;
+    color:#17233a;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #d4d9e2;
+    border-radius:6px;
+    outline:none;
+    background:white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#d4a017;
+    box-shadow:0 0 0 3px rgba(212,160,23,.12);
+}
+
+.form-group textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.full-btn{
+    width:100%;
+    background:#071a35;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.full-btn:hover{
+    background:#d4a017;
+    color:#071a35;
+}
+
+/* ==============================
+   FAQ
+================================= */
+.faq-section{
+    background:#f5f7fb;
+}
+
+.faq-container{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq{
+    background:white;
+    margin-bottom:12px;
+    border-radius:7px;
+    overflow:hidden;
+    box-shadow:0 3px 12px rgba(0,0,0,.06);
+}
+
+.faq-question{
+    width:100%;
+    background:white;
+    border:none;
+    padding:18px 20px;
+    text-align:left;
+    font-weight:bold;
+    font-size:15px;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.faq-question span{
+    font-size:22px;
+    color:#d4a017;
+}
+
+.faq-answer{
+    display:none;
+    padding:0 20px 18px;
+    color:#666;
+    font-size:14px;
+}
+
+.faq.open .faq-answer{
+    display:block;
+}
+
+/* ==============================
+   FOOTER
+================================= */
+footer{
+    background:#041126;
+    color:white;
+    padding:55px 6% 20px;
+}
+
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1.5fr;
+    gap:35px;
+}
+
+.footer-col h3{
+    color:#d4a017;
+    margin-bottom:18px;
+}
+
+.footer-col p{
+    color:#b9c3d2;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.footer-links{
+    list-style:none;
+}
+
+.footer-links li{
+    margin:9px 0;
+}
+
+.footer-links a{
+    color:#b9c3d2;
+    font-size:14px;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#d4a017;
+    padding-left:4px;
+}
+
+.footer-bottom{
+    max-width:1200px;
+    margin:40px auto 0;
+    padding-top:20px;
+    border-top:1px solid #26344c;
+    text-align:center;
+    color:#8d99aa;
+    font-size:13px;
+}
+
+/* ==============================
+   NOTIFICATION
+================================= */
+.notification{
+    position:fixed;
+    right:20px;
+    top:100px;
+    background:#071a35;
+    color:white;
+    padding:15px 22px;
+    border-left:4px solid #d4a017;
+    border-radius:5px;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+    display:none;
+    z-index:2000;
+}
+
+/* ==============================
+   ANIMATION
+================================= */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+================================= */
+@media(max-width:1000px){
+
+    .nav-links{
+        position:absolute;
+        top:75px;
+        left:0;
+        width:100%;
+        background:white;
+        display:none;
+        flex-direction:column;
+        padding:20px;
+        box-shadow:0 10px 20px rgba(0,0,0,.1);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .nav-links a{
+        width:100%;
+        text-align:center;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .services-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:700px){
+
+    .topbar{
+        flex-direction:column;
+        gap:5px;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    section{
+        padding:50px 5%;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .booking-container{
+        grid-template-columns:1fr;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .logo-text h2{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ==========================
+     TOP BAR
+=========================== -->
+<div class="topbar">
+    <div>
+        <span>📍 Kyotera, Uganda</span>
+        <span>📞 +256 708111425</span>
+    </div>
+
+    <div>
+        <span>✉️ info@shamirah.com</span>
+        <span>Open: Mon - Sat</span>
+    </div>
+</div>
+
+
+<!-- ==========================
+     NAVIGATION
+=========================== -->
+<header>
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        <div class="logo-icon">SEC</div>
+
+        <div class="logo-text">
+            <h2>SHAMIRAH</h2>
+            <p>ELECTRONICS COMPANY</p>
+        </div>
+    </a>
+
+
+    <button class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+
+    <ul class="nav-links" id="navLinks">
+
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+
+        <li>
+            <a href="about.html">About Us</a>
+        </li>
+
+        <li>
+            <a href="products.html">Products</a>
+        </li>
+
+        <li>
+            <a href="services.html" class="active">Services</a>
+        </li>
+
+        <li>
+            <a href="offers.html">Offers</a>
+        </li>
+
+        <li>
+            <a href="gallery.html">Gallery</a>
+        </li>
+
+        <li>
+            <a href="faq.html">FAQ & Support</a>
+        </li>
+
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+
+        <li>
+            <a href="products.html" class="cart-button">
+                🛒 Cart
+                <span class="cart-count" id="cartCount">0</span>
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+</header>
+
+
+<!-- ==========================
+     HERO
+=========================== -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Professional <span>Electronics Services</span>
+        </h1>
+
+        <p>
+            From installation and repairs to maintenance, technical
+            support and delivery, Shamirah Electronics Company helps
+            you keep your technology working efficiently.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#services" class="btn btn-gold">
+                Explore Services
+            </a>
+
+            <a href="#booking" class="btn btn-outline">
+                Request a Service
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================
+     SERVICES
+=========================== -->
+<section id="services">
+
+    <div class="section-title">
+
+        <h2>Our Services</h2>
+
+        <p>
+            We provide reliable electronics services for homes,
+            businesses, schools and organizations.
+        </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+
+        <!-- SERVICE 1 -->
+        <div class="service-card">
+
+            <div class="service-icon">🔧</div>
+
+            <h3>Electronics Repair</h3>
+
+            <p>
+                Professional diagnosis and repair of faulty
+                electronic devices and equipment.
+            </p>
+
+            <ul class="service-list">
+                <li>TV repair</li>
+                <li>Computer repair</li>
+                <li>Audio equipment repair</li>
+                <li>Device diagnosis</li>
+            </ul>
+
+            <a href="#booking" class="btn btn-gold">
+                Request Repair
+            </a>
+
+        </div>
+
+
+        <!-- SERVICE 2 -->
+        <div class="service-card">
+
+            <div class="service-icon">📺</div>
+
+            <h3>Installation</h3>
+
+            <p>
+                Safe and professional installation of electronic
+                equipment at homes, offices and businesses.
+            </p>
+
+            <ul class="service-list">
+                <li>TV installation</li>
+                <li>Home theatre setup</li>
+                <li>Computer setup</li>
+                <li>Appliance installation</li>
+            </ul>
+
+            <a href="#booking" class="btn btn-gold">
+                Book Installation
+            </a>
+
+        </div>
+
+
+        <!-- SERVICE 3 -->
+        <div class="service-card">
+
+            <div class="service-icon">⚙️</div>
+
+            <h3>Maintenance</h3>
+
+            <p>
+                Regular maintenance helps extend the useful life
+                and performance of your electronics.
+            </p>
+
+            <ul class="service-list">
+                <li>Preventive maintenance</li>
+                <li>System inspection</li>
+                <li>Cleaning</li>
+                <li>Performance checks</li>
+            </ul>
+
+            <a href="#booking" class="btn btn-gold">
+                Book Maintenance
+            </a>
+
+        </div>
+
+
+        <!-- SERVICE 4 -->
+        <div class="service-card">
+
+            <div class="service-icon">💻</div>
+
+            <h3>Technical Support</h3>
+
+            <p>
+                Get assistance with device configuration,
+                troubleshooting and general technical problems.
+            </p>
+
+            <ul class="service-list">
+                <li>Device configuration</li>
+                <li>Software assistance</li>
+                <li>Troubleshooting</li>
+                <li>Technical consultation</li>
+            </ul>
+
+            <a href="#booking" class="btn btn-gold">
+                Get Support
+            </a>
+
+        </div>
+
+
+        <!-- SERVICE 5 -->
+        <div class="service-card">
+
+            <div class="service-icon">🚚</div>
+
+            <h3>Delivery</h3>
+
+            <p>
+                Convenient delivery of selected electronics and
+                accessories to customers.
+            </p>
+
+            <ul class="service-list">
+                <li>Product delivery</li>
+                <li>Safe handling</li>
+                <li>Delivery scheduling</li>
+                <li>Customer confirmation</li>
+            </ul>
+
+            <a href="contact.html" class="btn btn-gold">
+                Contact Delivery
+            </a>
+
+        </div>
+
+
+        <!-- SERVICE 6 -->
+        <div class="service-card">
+
+            <div class="service-icon">📋</div>
+
+            <h3>Technology Consultation</h3>
+
+            <p>
+                We help customers understand their technology
+                requirements before purchasing equipment.
+            </p>
+
+            <ul class="service-list">
+                <li>Product selection</li>
+                <li>Technology planning</li>
+                <li>Business solutions</li>
+                <li>Equipment advice</li>
+            </ul>
+
+            <a href="#booking" class="btn btn-gold">
+                Consult Us
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================
+     WHY CHOOSE US
+=========================== -->
+<section class="why-section">
+
+    <div class="section-title">
+
+        <h2 style="color:white;">
+            Why Use Our Services?
+        </h2>
+
+        <p style="color:#cbd4e2;">
+            We focus on dependable service and practical technology
+            solutions for our customers.
+        </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+        <div class="why-card">
+
+            <div class="why-icon">✓</div>
+
+            <h3>Professional Service</h3>
+
+            <p>
+                Services are handled with attention to quality
+                and proper procedures.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-icon">⏱</div>
+
+            <h3>Convenient Support</h3>
+
+            <p>
+                Customers can request services through the
+                online booking form.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-icon">🛡</div>
+
+            <h3>Reliable Solutions</h3>
+
+            <p>
+                We aim to provide practical solutions to
+                electronics problems.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-icon">💡</div>
+
+            <h3>Technical Knowledge</h3>
+
+            <p>
+                Customers receive assistance with electronics
+                and technology-related needs.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================
+     SERVICE BOOKING
+=========================== -->
+<section class="booking-section" id="booking">
+
+    <div class="section-title">
+
+        <h2>Request a Service</h2>
+
+        <p>
+            Complete the form below and submit your service request.
+        </p>
+
+    </div>
+
+
+    <div class="booking-container">
+
+
+        <!-- INFORMATION -->
+        <div class="booking-info">
+
+            <h2>Need Technical Help?</h2>
+
+            <p>
+                Tell us what you need and our team can use your
+                request to understand the service required.
+            </p>
+
+
+            <div class="contact-item">
+
+                <div>📞</div>
+
+                <div>
+                    <strong>Call Us</strong>
+                    +256 708111425
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div>✉️</div>
+
+                <div>
+                    <strong>Email</strong>
+                    info@shamirah.com
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div>📍</div>
+
+                <div>
+                    <strong>Location</strong>
+                    Kyotera, Uganda
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div>🕐</div>
+
+                <div>
+                    <strong>Working Hours</strong>
+                    Monday - Saturday
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORM -->
+        <form class="booking-form" id="serviceForm">
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number *
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="+256..."
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="you@example.com"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="service">
+                        Select Service *
+                    </label>
+
+                    <select id="service" required>
+
+                        <option value="">
+                            Choose a service
+                        </option>
+
+                        <option>
+                            Electronics Repair
+                        </option>
+
+                        <option>
+                            Installation
+                        </option>
+
+                        <option>
+                            Maintenance
+                        </option>
+
+                        <option>
+                            Technical Support
+                        </option>
+
+                        <option>
+                            Delivery
+                        </option>
+
+                        <option>
+                            Technology Consultation
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="date">
+                        Preferred Date *
+                    </label>
+
+                    <input
+                        type="date"
+                        id="date"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="location">
+                        Service Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="location"
+                        placeholder="e.g. Kyotera Town"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="problem">
+                    Describe Your Request *
+                </label>
+
+                <textarea
+                    id="problem"
+                    placeholder="Describe the device or service you need..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button type="submit" class="full-btn">
+                Submit Service Request
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================
+     MINI FAQ
+=========================== -->
+<section class="faq-section">
+
+    <div class="section-title">
+
+        <h2>Service Questions</h2>
+
+        <p>
+            Some quick answers before requesting a service.
+        </p>
+
+    </div>
+
+
+    <div class="faq-container">
+
+
+        <div class="faq">
+
+            <button class="faq-question">
+                Do I need an appointment?
+                <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+                For some services, an appointment can help us
+                prepare and schedule the required support.
+            </div>
+
+        </div>
+
+
+        <div class="faq">
+
+            <button class="faq-question">
+                What information should I provide?
+                <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+                Provide your contact details, the type of service
+                needed and a short description of the device or
+                problem.
+            </div>
+
+        </div>
+
+
+        <div class="faq">
+
+            <button class="faq-question">
+                Can I request technical support online?
+                <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+                Yes. Use the service request form on this page
+                to submit your technical support requirements.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================
+     FOOTER
+=========================== -->
+<footer>
+
+    <div class="footer-grid">
+
+        <!-- COLUMN 1: COMPANY -->
+        <div class="footer-col">
+
+            <h3>Shamirah Electronics</h3>
+
+            <p>
+                Your trusted electronics partner in Uganda,
+                offering quality products and professional services.
+            </p>
+
+            <p>📍 Kyotera, Uganda</p>
+            <p>📞 +256 708111425</p>
+            <p>✉️ info@shamirah.com</p>
+
+        </div>
+
+
+        <!-- COLUMN 2: QUICK LINKS -->
+        <div class="footer-col">
+
+            <h3>Quick Links</h3>
+
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="offers.html">Offers</a></li>
+            </ul>
+
+        </div>
+
+
+        <!-- COLUMN 3: SERVICES -->
+        <div class="footer-col">
+
+            <h3>Services</h3>
+
+            <ul class="footer-links">
+                <li><a href="services.html">Electronics Repair</a></li>
+                <li><a href="services.html">Installation</a></li>
+                <li><a href="services.html">Maintenance</a></li>
+                <li><a href="services.html">Technical Support</a></li>
+                <li><a href="services.html">Delivery</a></li>
+            </ul>
+
+        </div>
+
+
+        <!-- COLUMN 4: CONTACT -->
+        <div class="footer-col">
+
+            <h3>Contact</h3>
+
+            <p>📍 Kyotera, Uganda</p>
+            <p>📞 +256 708111425</p>
+            <p>✉️ info@shamirah.com</p>
+            <p>🕐 Mon - Sat: 8am - 6pm</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Shamirah Electronics Company.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- ==========================
+     NOTIFICATION
+=========================== -->
+<div class="notification" id="notification">
+    Service request submitted successfully!
+</div>
+
+
+<script>
+
+/* ==============================
+   MOBILE MENU
+================================= */
+
+function toggleMenu(){
+
+    const nav = document.getElementById("navLinks");
+
+    nav.classList.toggle("show");
+
+}
+
+
+/* ==============================
+   CART COUNT
+================================= */
+
+function updateCartCount(){
+
+    let cart = JSON.parse(
+        localStorage.getItem("shamirahCart") || "[]"
+    );
+
+    let total = cart.reduce(
+        (sum,item) => sum + (item.quantity || 1),
+        0
+    );
+
+    document.getElementById("cartCount").textContent = total;
+
+}
+
+updateCartCount();
+
+
+/* ==============================
+   FAQ ACCORDION
+================================= */
+
+const faqQuestions =
+    document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+        const faq = this.parentElement;
+
+        faq.classList.toggle("open");
+
+        const symbol = this.querySelector("span");
+
+        if(faq.classList.contains("open")){
+            symbol.textContent = "−";
+        }else{
+            symbol.textContent = "+";
+        }
+
+    });
+
+});
+
+
+/* ==============================
+   DATE VALIDATION
+================================= */
+
+const dateInput = document.getElementById("date");
+
+const today = new Date();
+
+const year = today.getFullYear();
+
+const month = String(
+    today.getMonth() + 1
+).padStart(2,"0");
+
+const day = String(
+    today.getDate()
+).padStart(2,"0");
+
+dateInput.min = `${year}-${month}-${day}`;
+
+
+/* ==============================
+   SERVICE FORM
+================================= */
+
+const serviceForm =
+    document.getElementById("serviceForm");
+
+serviceForm.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
+    const service =
+        document.getElementById("service").value;
+
+    const problem =
+        document.getElementById("problem").value.trim();
+
+
+    if(name.length < 2){
+
+        alert("Please enter a valid full name.");
+
+        return;
+
+    }
+
+
+    if(phone.length < 9){
+
+        alert("Please enter a valid phone number.");
+
+        return;
+
+    }
+
+
+    if(service === ""){
+
+        alert("Please select a service.");
+
+        return;
+
+    }
+
+
+    if(problem.length < 10){
+
+        alert(
+            "Please provide more details about your request."
+        );
+
+        return;
+
+    }
+
+
+    /* Generate service reference */
+
+    const reference =
+        "SEC-" +
+        Math.floor(
+            100000 + Math.random() * 900000
+        );
+
+
+    /* Show notification */
+
+    const notification =
+        document.getElementById("notification");
+
+    notification.innerHTML =
+        "✓ Request received! Reference: " +
+        reference;
+
+    notification.style.display = "block";
+
+
+    /* Clear form */
+
+    serviceForm.reset();
+
+
+    /* Hide notification after 5 seconds */
+
+    setTimeout(function(){
+
+        notification.style.display = "none";
+
+    },5000);
+
+});
+
+
+/* ==============================
+   CLOSE MOBILE MENU AFTER CLICK
+================================= */
+
+document.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document
+            .getElementById("navLinks")
+            .classList.remove("show");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

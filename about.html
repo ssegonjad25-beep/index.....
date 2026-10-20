@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Learn about Shamirah Electronics Company, our background, mission, vision, objectives and core values.">
+
+    <title>About Us | Shamirah Electronics Company</title>
+
+    <style>
+
+        /* ================================
+           GENERAL SETTINGS
+        ================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #172033;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        textarea {
+            font-family: inherit;
+        }
+
+
+        /* ================================
+           TOP BAR
+        ================================== */
+
+        .top-bar {
+            background: #071a33;
+            color: white;
+            padding: 9px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+        }
+
+        .top-bar span {
+            margin-right: 18px;
+        }
+
+
+        /* ================================
+           NAVIGATION
+        ================================== */
+
+        header {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .navbar {
+            width: 90%;
+            max-width: 1400px;
+            min-height: 78px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-box {
+            width: 48px;
+            height: 48px;
+            background: #d7a928;
+            color: #071a33;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .logo-text h2 {
+            font-size: 18px;
+            line-height: 1;
+            color: #071a33;
+        }
+
+        .logo-text p {
+            font-size: 10px;
+            color: #d7a928;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        nav a {
+            padding: 10px 11px;
+            border-radius: 6px;
+            color: #263248;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #071a33;
+            color: white;
+        }
+
+        nav .cart-link {
+            background: #d7a928;
+            color: #071a33;
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: #071a33;
+            color: white;
+            font-size: 21px;
+            padding: 9px 13px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+
+        /* ================================
+           PAGE HERO
+        ================================== */
+
+        .page-hero {
+            min-height: 440px;
+            background:
+                linear-gradient(
+                    rgba(5, 21, 43, 0.82),
+                    rgba(5, 21, 43, 0.82)
+                ),
+                url("hero.PNG")
+                center/cover;
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .page-hero-content {
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+            animation: fadeUp 1s ease;
+        }
+
+        .page-hero small {
+            color: #d7a928;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(42px, 6vw, 70px);
+            margin: 12px 0;
+        }
+
+        .page-hero h1 span {
+            color: #d7a928;
+        }
+
+        .page-hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #dce4ed;
+            font-size: 17px;
+        }
+
+
+        /* ================================
+           COMMON SECTION
+        ================================== */
+
+        section {
+            padding: 80px 6%;
+        }
+
+        .section-heading {
+            max-width: 750px;
+            text-align: center;
+            margin: 0 auto 45px;
+        }
+
+        .section-heading small {
+            color: #d7a928;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+            color: #071a33;
+            font-size: 38px;
+            margin: 8px 0;
+        }
+
+        .section-heading p {
+            color: #667085;
+        }
+
+
+        /* ================================
+           COMPANY INTRODUCTION
+        ================================== */
+
+        .intro-section {
+            background: white;
+        }
+
+        .intro-grid {
+            max-width: 1250px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .intro-text small {
+            color: #d7a928;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .intro-text h2 {
+            color: #071a33;
+            font-size: 37px;
+            line-height: 1.2;
+            margin: 12px 0 20px;
+        }
+
+        .intro-text p {
+            color: #626d7d;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            border-left: 4px solid #d7a928;
+            padding: 15px 20px;
+            background: #f6f7f9;
+            margin-top: 20px;
+            color: #3f4b5d;
+        }
+
+
+        /* ================================
+           MISSION / VISION
+        ================================== */
+
+        .mv-section {
+            background: #f5f7fa;
+        }
+
+        .mv-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .mv-card {
+            background: white;
+            padding: 38px;
+            border-radius: 12px;
+            border: 1px solid #e4e7ec;
+            transition: 0.35s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mv-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background: #d7a928;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 18px 35px rgba(0,0,0,0.08);
+        }
+
+        .mv-icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .mv-card h3 {
+            color: #071a33;
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .mv-card p {
+            color: #697586;
+        }
+
+
+        /* ================================
+           OBJECTIVES
+        ================================== */
+
+        .objectives {
+            background: white;
+        }
+
+        .objective-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .objective-card {
+            padding: 30px;
+            background: #f7f8fa;
+            border-radius: 10px;
+            border: 1px solid #e4e7ec;
+            transition: 0.3s;
+        }
+
+        .objective-card:hover {
+            background: #071a33;
+            color: white;
+            transform: translateY(-6px);
+        }
+
+        .objective-card:hover h3,
+        .objective-card:hover p {
+            color: white;
+        }
+
+        .objective-number {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #d7a928;
+            color: #071a33;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 17px;
+        }
+
+        .objective-card h3 {
+            color: #071a33;
+            margin-bottom: 9px;
+        }
+
+        .objective-card p {
+            color: #6a7483;
+            font-size: 14px;
+        }
+
+
+        /* ================================
+           CORE VALUES
+        ================================== */
+
+        .values-section {
+            background: #071a33;
+            color: white;
+        }
+
+        .values-section .section-heading h2 {
+            color: white;
+        }
+
+        .values-section .section-heading p {
+            color: #c7d0dc;
+        }
+
+        .values-grid {
+            max-width: 1250px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 30px 18px;
+            border: 1px solid #2d4059;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .value-card:hover {
+            border-color: #d7a928;
+            transform: translateY(-7px);
+        }
+
+        .value-icon {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .value-card h3 {
+            color: #d7a928;
+            margin-bottom: 8px;
+        }
+
+        .value-card p {
+            color: #c8d1dd;
+            font-size: 13px;
+        }
+
+
+        /* ================================
+           COMPANY PROMISE
+        ================================== */
+
+        .promise-section {
+            background: white;
+        }
+
+        .promise-box {
+            max-width: 1100px;
+            margin: auto;
+            background: #f5f7fa;
+            padding: 45px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #e3e7ed;
+        }
+
+        .promise-box h2 {
+            color: #071a33;
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .promise-box p {
+            max-width: 800px;
+            margin: auto;
+            color: #687385;
+        }
+
+        .promise-box .btn {
+            margin-top: 25px;
+        }
+
+
+        /* ================================
+           BUTTON
+        ================================== */
+
+        .btn {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 7px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #071a33;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #102b4e;
+            transform: translateY(-3px);
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================== */
+
+        footer {
+            background: #071a33;
+            color: white;
+            padding: 60px 6% 20px;
+        }
+
+        .footer-grid {
+            max-width: 1300px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            color: #d7a928;
+            margin-bottom: 17px;
+        }
+
+        footer p {
+            color: #c7d0dc;
+            font-size: 14px;
+            margin-bottom: 9px;
+        }
+
+        .footer-bottom {
+            max-width: 1300px;
+            margin: 45px auto 0;
+            border-top: 1px solid #293d57;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            color: #98a5b6;
+            font-size: 13px;
+        }
+
+
+        /* ================================
+           ANIMATION
+        ================================== */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* ================================
+           RESPONSIVE DESIGN
+        ================================== */
+
+        @media (max-width: 1100px) {
+
+            nav a {
+                padding: 9px 7px;
+                font-size: 11px;
+            }
+
+            .values-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .objective-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 800px) {
+
+            .top-bar {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 78px;
+                left: 0;
+                width: 100%;
+                background: white;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 15px 5%;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            nav a {
+                width: 100%;
+                padding: 13px;
+            }
+
+            .intro-grid,
+            .mv-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .page-hero {
+                min-height: 370px;
+            }
+
+            .page-hero h1 {
+                font-size: 45px;
+            }
+
+            .intro-text h2 {
+                font-size: 30px;
+            }
+
+            .objective-grid,
+            .values-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .promise-box {
+                padding: 30px 20px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- =====================================
+         TOP INFORMATION BAR
+    ====================================== -->
+
+    <div class="top-bar">
+
+        <div>
+            <span>📍 Kyotera, Uganda</span>
+            <span>📞 +256 708111425</span>
+        </div>
+
+        <div>
+            <span>Mon - Sat: 8:00 AM - 6:00 PM</span>
+            <span>✉ info@shamirah.com</span>
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         HEADER / NAVIGATION
+    ====================================== -->
+
+    <header>
+
+        <div class="navbar">
+
+            <a href="index.html" class="logo">
+
+                <div class="logo-box">
+                    SEC
+                </div>
+
+                <div class="logo-text">
+
+                    <h2>SHAMIRAH</h2>
+
+                    <p>ELECTRONICS COMPANY</p>
+
+                </div>
+
+            </a>
+
+
+            <button class="menu-btn"
+                    onclick="toggleMenu()"
+                    aria-label="Open navigation menu">
+
+                ☰
+
+            </button>
+
+
+            <nav id="mainNav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html" class="active">
+                    About Us
+                </a>
+
+                <a href="products.html">
+                    Products
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="offers.html">
+                    Offers
+                </a>
+
+                <a href="gallery.html">
+                    Gallery
+                </a>
+
+                <a href="faq.html">
+                    FAQ
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="products.html" class="cart-link">
+
+                    🛒 Cart
+                    (<span id="cartCount">0</span>)
+
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================
+         PAGE HERO
+    ====================================== -->
+
+    <section class="page-hero">
+
+        <div class="page-hero-content">
+
+            <small>WHO WE ARE</small>
+
+            <h1>
+                About <span>Shamirah</span>
+            </h1>
+
+            <p>
+                Discover the story, purpose and values behind
+                Shamirah Electronics Company.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         COMPANY INTRODUCTION
+    ====================================== -->
+
+    <section class="intro-section">
+
+        <div class="intro-grid">
+
+            <div class="intro-text">
+
+                <small>ABOUT OUR COMPANY</small>
+
+                <h2>
+                    Connecting People With Modern Technology
+                </h2>
+
+                <p>
+                    Shamirah Electronics Company is a Ugandan
+                    electronics business focused on making
+                    modern technology easier to discover, understand
+                    and access.
+                </p>
+
+                <p>
+                    The company provides a wide range of electronics
+                    categories including smartphones, laptops,
+                    televisions, appliances, audio equipment and
+                    accessories.
+                </p>
+
+                <p>
+                    In addition to electronics, Shamirah provides
+                    supporting services such as installation,
+                    maintenance, repair, technical support and
+                    delivery arrangements.
+                </p>
+
+                <div class="highlight">
+
+                    <strong>
+                        Our slogan:
+                    </strong>
+
+                    <br>
+
+                    "Smart Technology. Simple Life."
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         MISSION AND VISION
+    ====================================== -->
+
+    <section class="mv-section">
+
+        <div class="section-heading">
+
+            <small>OUR DIRECTION</small>
+
+            <h2>Mission & Vision</h2>
+
+            <p>
+                Our mission and vision provide the foundation
+                for the company's services and future development.
+            </p>
+
+        </div>
+
+
+        <div class="mv-grid">
+
+
+            <div class="mv-card">
+
+                <div class="mv-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Our Mission
+                </h3>
+
+                <p>
+                    To provide customers with access to reliable
+                    electronics, useful technology solutions and
+                    professional support while creating a convenient
+                    and customer-focused buying experience.
+                </p>
+
+            </div>
+
+
+            <div class="mv-card">
+
+                <div class="mv-icon">
+                    👁️
+                </div>
+
+                <h3>
+                    Our Vision
+                </h3>
+
+                <p>
+                    To become a trusted electronics and technology
+                    solutions provider recognized for innovation,
+                    accessibility, customer service and professional
+                    technical support.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         OBJECTIVES
+    ====================================== -->
+
+    <section class="objectives">
+
+        <div class="section-heading">
+
+            <small>WHAT WE AIM TO ACHIEVE</small>
+
+            <h2>Our Objectives</h2>
+
+            <p>
+                These objectives guide the development of our
+                products, services and customer experience.
+            </p>
+
+        </div>
+
+
+        <div class="objective-grid">
+
+
+            <div class="objective-card">
+
+                <div class="objective-number">
+                    01
+                </div>
+
+                <h3>
+                    Provide Quality Electronics
+                </h3>
+
+                <p>
+                    Make a broad selection of electronics available
+                    for home, education, office, entertainment and
+                    business requirements.
+                </p>
+
+            </div>
+
+
+            <div class="objective-card">
+
+                <div class="objective-number">
+                    02
+                </div>
+
+                <h3>
+                    Improve Customer Experience
+                </h3>
+
+                <p>
+                    Make it simple for customers to find products,
+                    compare options, ask questions and communicate
+                    with the company.
+                </p>
+
+            </div>
+
+
+            <div class="objective-card">
+
+                <div class="objective-number">
+                    03
+                </div>
+
+                <h3>
+                    Provide Technical Support
+                </h3>
+
+                <p>
+                    Support customers with repair, installation,
+                    maintenance and other electronics-related
+                    technical requirements.
+                </p>
+
+            </div>
+
+
+            <div class="objective-card">
+
+                <div class="objective-number">
+                    04
+                </div>
+
+                <h3>
+                    Encourage Digital Access
+                </h3>
+
+                <p>
+                    Use digital platforms to make electronics
+                    information and customer communication more
+                    convenient.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         CORE VALUES
+    ====================================== -->
+
+    <section class="values-section">
+
+        <div class="section-heading">
+
+            <small>WHAT GUIDES US</small>
+
+            <h2>Our Core Values</h2>
+
+            <p>
+                Our values shape how we interact with customers,
+                provide services and develop our business.
+            </p>
+
+        </div>
+
+
+        <div class="values-grid">
+
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    Integrity
+                </h3>
+
+                <p>
+                    We value honesty and responsible business
+                    relationships.
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    ⭐
+                </div>
+
+                <h3>
+                    Quality
+                </h3>
+
+                <p>
+                    We focus on useful products and professional
+                    customer support.
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    💡
+                </div>
+
+                <h3>
+                    Innovation
+                </h3>
+
+                <p>
+                    We embrace modern technology and digital
+                    solutions.
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    ❤️
+                </div>
+
+                <h3>
+                    Customer Care
+                </h3>
+
+                <p>
+                    We place customer needs at the center of
+                    our service approach.
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Efficiency
+                </h3>
+
+                <p>
+                    We aim to make technology services convenient
+                    and practical.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         COMPANY PROMISE
+    ====================================== -->
+
+    <section class="promise-section">
+
+        <div class="promise-box">
+
+            <h2>
+                Technology Made Easier
+            </h2>
+
+            <p>
+                Shamirah Electronics Company is built around the
+                idea that technology should be understandable,
+                accessible and useful. From product discovery to
+                technical support, our website is designed to give
+                customers a convenient digital experience.
+            </p>
+
+            <a href="products.html"
+               class="btn btn-primary">
+
+                Explore Our Products →
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <h3>
+                    Shamirah Electronics
+                </h3>
+
+                <p>
+                    Smart Technology. Simple Life.
+                </p>
+
+                <p style="margin-top:12px;">
+                    A modern Ugandan electronics company providing
+                    electronics, technical services and customer support.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    📍 Kyotera, Uganda
+                </p>
+
+                <p>
+                    📞 +256 708111425
+                </p>
+
+                <p>
+                    ✉ info@shamirah.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Shamirah Electronics Company.
+                All Rights Reserved.
+            </span>
+
+            <span>
+                Professional Electronics Website
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script>
+
+        /* ================================
+           MOBILE NAVIGATION
+        ================================== */
+
+        function toggleMenu() {
+
+            const nav =
+                document.getElementById("mainNav");
+
+            nav.classList.toggle("show");
+
+        }
+
+
+        /* ================================
+           CART COUNT
+        ================================== */
+
+        function updateCartCount() {
+
+            const cartCount =
+                document.getElementById("cartCount");
+
+            if (!cartCount) {
+                return;
+            }
+
+
+            let cart = [];
+
+
+            try {
+
+                const saved =
+                    localStorage.getItem("shamirahCart");
+
+                if (saved) {
+
+                    const parsed =
+                        JSON.parse(saved);
+
+                    if (Array.isArray(parsed)) {
+                        cart = parsed;
+                    }
+
+                }
+
+            } catch (error) {
+
+                cart = [];
+
+            }
+
+
+            let total = 0;
+
+            cart.forEach(function(item) {
+
+                const quantity =
+                    Number(item.quantity) || 1;
+
+                total += quantity;
+
+            });
+
+
+            cartCount.textContent = total;
+
+        }
+
+
+        /* Update cart if another tab changes it */
+
+        window.addEventListener("storage", function(event) {
+
+            if (event.key === "shamirahCart") {
+
+                updateCartCount();
+
+            }
+
+        });
+
+
+        /* ================================
+           CLOSE MOBILE MENU AFTER LINK
+        ================================== */
+
+        document
+            .querySelectorAll("#mainNav a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    document
+                        .getElementById("mainNav")
+                        .classList.remove("show");
+
+                });
+
+            });
+
+
+        /* ================================
+           INITIALIZE
+        ================================== */
+
+        updateCartCount();
+
+    </script>
+
+</body>
+</html>

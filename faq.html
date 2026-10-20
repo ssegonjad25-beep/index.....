@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FAQ & Support | Shamirah Electronics Company</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fa;
+    color:#172033;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+.topbar{
+    background:#081b33;
+    color:white;
+    padding:10px 5%;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    flex-wrap:wrap;
+    font-size:14px;
+}
+
+header{
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.10);
+}
+
+.navbar{
+    min-height:75px;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#d5a52c;
+    color:#081b33;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+}
+
+.logo-text h2{
+    color:#081b33;
+    font-size:18px;
+}
+
+.logo-text p{
+    color:#b07d0b;
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    align-items:center;
+    gap:3px;
+}
+
+.nav-links a{
+    display:block;
+    padding:9px 10px;
+    border-radius:6px;
+    color:#172033;
+    font-size:13px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    background:#081b33;
+    color:white;
+}
+
+.cart-link{
+    background:#d5a52c !important;
+    color:#081b33 !important;
+}
+
+#cartCount{
+    background:#c62828;
+    color:white;
+    min-width:20px;
+    height:20px;
+    padding:2px 6px;
+    border-radius:20px;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    font-size:11px;
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:#081b33;
+    color:white;
+    padding:10px 14px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:20px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:390px;
+    padding:60px 5%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    background:
+    linear-gradient(rgba(8,27,51,.88),rgba(8,27,51,.88)),
+    url("CALL.PNG");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:850px;
+    animation:fadeUp 1s ease;
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:18px;
+    color:#e6edf5;
+}
+
+/* GENERAL */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section{
+    padding:65px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title h2{
+    font-size:34px;
+    color:#081b33;
+    margin-bottom:8px;
+}
+
+.section-title p{
+    color:#667085;
+}
+
+/* FAQ SEARCH */
+
+.search-area{
+    background:white;
+    padding:25px;
+    border-radius:14px;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+    margin-bottom:25px;
+}
+
+.search-input{
+    width:100%;
+    padding:15px;
+    border:2px solid #e0e4ea;
+    border-radius:8px;
+    outline:none;
+}
+
+.search-input:focus{
+    border-color:#d5a52c;
+}
+
+/* FILTER */
+
+.filters{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:30px;
+}
+
+.filter{
+    background:white;
+    color:#081b33;
+    border:1px solid #d5a52c;
+    padding:9px 17px;
+    border-radius:25px;
+    cursor:pointer;
+}
+
+.filter.active,
+.filter:hover{
+    background:#081b33;
+    color:white;
+}
+
+/* FAQ */
+
+.faq-list{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-item{
+    background:white;
+    margin-bottom:13px;
+    border-radius:9px;
+    overflow:hidden;
+    box-shadow:0 3px 12px rgba(0,0,0,.06);
+}
+
+.faq-question{
+    width:100%;
+    border:0;
+    background:white;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    text-align:left;
+    color:#081b33;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.faq-symbol{
+    color:#b17c08;
+    font-size:23px;
+}
+
+.faq-answer{
+    display:none;
+    padding:0 20px 20px;
+    color:#667085;
+    border-top:1px solid #edf0f4;
+}
+
+.faq-item.open .faq-answer{
+    display:block;
+    padding-top:15px;
+}
+
+.faq-item.open .faq-symbol{
+    transform:rotate(45deg);
+}
+
+.no-results{
+    display:none;
+    max-width:900px;
+    margin:20px auto;
+    text-align:center;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+}
+
+/* SUPPORT */
+
+.support-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.support-card{
+    background:white;
+    text-align:center;
+    padding:28px 18px;
+    border-radius:13px;
+    box-shadow:0 4px 18px rgba(0,0,0,.06);
+    transition:.3s;
+}
+
+.support-card:hover{
+    transform:translateY(-6px);
+}
+
+.support-icon{
+    width:58px;
+    height:58px;
+    margin:0 auto 14px;
+    border-radius:50%;
+    background:#eef3f8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+}
+
+.support-card h3{
+    color:#081b33;
+    margin-bottom:7px;
+}
+
+.support-card p{
+    color:#667085;
+    font-size:14px;
+    margin-bottom:13px;
+}
+
+.support-card a{
+    color:#a87508;
+    font-weight:bold;
+}
+
+/* SUPPORT FORM */
+
+.support-section{
+    background:#081b33;
+}
+
+.support-section .section-title h2{
+    color:white;
+}
+
+.support-section .section-title p{
+    color:#cbd5e1;
+}
+
+.support-layout{
+    display:grid;
+    grid-template-columns:1fr 1.3fr;
+    gap:30px;
+}
+
+.support-info{
+    background:#102945;
+    color:white;
+    padding:30px;
+    border-radius:13px;
+}
+
+.support-info h3{
+    color:#d5a52c;
+    margin-bottom:15px;
+}
+
+.support-info p{
+    color:#d4dce6;
+    margin-bottom:10px;
+}
+
+.business-hours{
+    margin-top:25px;
+    padding-top:20px;
+    border-top:1px solid #3a5168;
+}
+
+.form-box{
+    background:white;
+    padding:30px;
+    border-radius:13px;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.form-group{
+    margin-bottom:16px;
+}
+
+.form-group label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:6px;
+    font-size:14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #d9dee6;
+    border-radius:7px;
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#d5a52c;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.submit-btn{
+    width:100%;
+}
+
+.success{
+    display:none;
+    background:#e7f7ed;
+    color:#176b38;
+    border:1px solid #a8dfbb;
+    padding:15px;
+    border-radius:7px;
+    margin-bottom:15px;
+}
+
+.ticket{
+    display:none;
+    background:#fff8df;
+    border:1px solid #e4c657;
+    padding:17px;
+    border-radius:8px;
+    margin-top:15px;
+}
+
+/* CTA */
+
+.cta{
+    background:#d5a52c;
+    color:#081b33;
+    text-align:center;
+    padding:55px 6%;
+}
+
+.cta h2{
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.cta p{
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    border:0;
+    padding:12px 22px;
+    border-radius:7px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn-primary{
+    background:#d5a52c;
+    color:#081b33;
+}
+
+.btn-light{
+    background:white;
+    color:#081b33;
+}
+
+/* FOOTER */
+
+footer{
+    background:#050f1d;
+    color:white;
+    padding:50px 6% 20px;
+}
+
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1.5fr;
+    gap:30px;
+    margin-bottom:30px;
+}
+
+.footer-col h3{
+    color:#d5a52c;
+    margin-bottom:14px;
+}
+
+.footer-col p{
+    color:#b9c3cf;
+    font-size:14px;
+    margin-bottom:8px;
+}
+
+.copyright{
+    border-top:1px solid #273548;
+    padding-top:17px;
+    text-align:center;
+    color:#8793a3;
+    font-size:13px;
+}
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    top:100px;
+    right:20px;
+    background:#081b33;
+    color:white;
+    padding:15px 20px;
+    border-left:4px solid #d5a52c;
+    border-radius:7px;
+    transform:translateX(130%);
+    transition:.4s;
+    z-index:3000;
+}
+
+.toast.show{
+    transform:translateX(0);
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+    .nav-links a{
+        padding:8px 6px;
+        font-size:11px;
+    }
+
+    .support-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:850px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:75px;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        align-items:stretch;
+        padding:10px 5%;
+        box-shadow:0 8px 20px rgba(0,0,0,.1);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .nav-links a{
+        padding:12px;
+        font-size:14px;
+    }
+
+    .support-layout{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+}
+
+@media(max-width:600px){
+
+    .topbar{
+        justify-content:center;
+        text-align:center;
+    }
+
+    .hero{
+        min-height:330px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .section{
+        padding:50px 0;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
+
+    .support-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+    <div>
+        <span>📍 Kyotera, Uganda</span>
+        <span>📞 +256 708111425</span>
+    </div>
+
+    <div>
+        <span>✉ info@shamirah.com</span>
+        <span>🕒 Mon - Sat: 8:00 AM - 6:00 PM</span>
+    </div>
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<header>
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-icon">SEC</div>
+
+        <div class="logo-text">
+            <h2>SHAMIRAH</h2>
+            <p>ELECTRONICS COMPANY</p>
+        </div>
+
+    </a>
+
+
+    <button
+        class="menu-btn"
+        type="button"
+        id="menuButton">
+        ☰
+    </button>
+
+
+    <ul class="nav-links" id="navLinks">
+
+        <li><a href="index.html">Home</a></li>
+
+        <li><a href="about.html">About</a></li>
+
+        <li><a href="products.html">Products</a></li>
+
+        <li><a href="services.html">Services</a></li>
+
+        <li><a href="offers.html">Offers</a></li>
+
+        <li><a href="gallery.html">Gallery</a></li>
+
+        <li>
+            <a href="faq.html" class="active">
+                FAQ & Support
+            </a>
+        </li>
+
+        <li><a href="contact.html">Contact</a></li>
+
+        <li>
+            <a href="products.html" class="cart-link">
+                🛒 Cart
+                <span id="cartCount">0</span>
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+    <h1>FAQ & Customer Support</h1>
+
+    <p>
+        Find answers to common questions or contact
+        Shamirah Electronics Company for customer
+        and technical support.
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- FAQ SECTION -->
+
+<section class="section">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <p>
+            Search or filter questions to find the answers you need.
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-area">
+
+        <input
+            type="text"
+            id="faqSearch"
+            class="search-input"
+            placeholder="🔎 Search frequently asked questions...">
+
+    </div>
+
+
+    <!-- FILTERS -->
+
+    <div class="filters">
+
+        <button
+            class="filter active"
+            data-category="all">
+            All
+        </button>
+
+        <button
+            class="filter"
+            data-category="products">
+            Products
+        </button>
+
+        <button
+            class="filter"
+            data-category="orders">
+            Orders
+        </button>
+
+        <button
+            class="filter"
+            data-category="services">
+            Services
+        </button>
+
+        <button
+            class="filter"
+            data-category="warranty">
+            Warranty
+        </button>
+
+    </div>
+
+
+    <!-- FAQ LIST -->
+
+    <div class="faq-list">
+
+
+        <div class="faq-item" data-category="products">
+
+            <button class="faq-question" type="button">
+
+                <span>What types of electronics do you sell?</span>
+
+                <span class="faq-symbol">+</span>
+
+            </button>
+
+            <div class="faq-answer">
+                We offer a wide range of electronics including
+                smartphones, laptops, televisions, audio
+                equipment, home appliances and accessories.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item" data-category="orders">
+
+            <button class="faq-question" type="button">
+
+                <span>How do I place an order?</span>
+
+                <span class="faq-symbol">+</span>
+
+            </button>
+
+            <div class="faq-answer">
+                Browse our Products page, add items to your cart,
+                then proceed to the Contact page to submit your order.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item" data-category="services">
+
+            <button class="faq-question" type="button">
+
+                <span>Do you provide installation services?</span>
+
+                <span class="faq-symbol">+</span>
+
+            </button>
+
+            <div class="faq-answer">
+                Yes. Installation services are available for
+                selected electronics such as TVs, appliances
+                and compatible equipment.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item" data-category="orders">
+
+            <button class="faq-question" type="button">
+
+                <span>What payment options are available?</span>
+
+                <span class="faq-symbol">+</span>
+
+            </button>
+
+            <div class="faq-answer">
+                Payment arrangements should be confirmed with
+                the sales team before completing an order.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item" data-category="products">
+
+            <button class="faq-question" type="button">
+
+                <span>Can I receive advice before buying?</span>
+
+                <span class="faq-symbol">+</span>
+
+            </button>
+
+            <div class="faq-answer">
+                Yes. Our support team can help customers
+                understand product features and select
+                equipment according to their needs.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item" data-category="services">
+
+            <button class="faq-question" type="button">
+
+                <span>How can I request technical support?</span>
+
+                <span class="faq-symbol">+</span>
+
+            </button>
+
+            <div class="faq-answer">
+                Submit the support ticket form below or
+                contact us by phone or email.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item" data-category="warranty">
+
+            <button class="faq-question" type="button">
+
+                <span>Do products come with a warranty?</span>
+
+                <span class="faq-symbol">+</span>
+
+            </button>
+
+            <div class="faq-answer">
+                Warranty terms may differ depending on the product.
+                Customers should confirm applicable warranty
+                information before purchase.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item" data-category="services">
+
+            <button class="faq-question" type="button">
+
+                <span>Do you offer delivery services?</span>
+
+                <span class="faq-symbol">+</span>
+
+            </button>
+
+            <div class="faq-answer">
+                Yes. Delivery arrangements can be made for
+                customers within supported locations.
+                Contact us for more information.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="no-results" id="noResults">
+
+        <h3>No FAQ Found</h3>
+
+        <p>
+            Try another search term or category.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- SUPPORT OPTIONS -->
+
+<section class="section">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>Customer Support Options</h2>
+
+        <p>
+            Choose the support channel that is most convenient for you.
+        </p>
+
+    </div>
+
+
+    <div class="support-grid">
+
+        <div class="support-card">
+
+            <div class="support-icon">📞</div>
+
+            <h3>Call Us</h3>
+
+            <p>
+                Speak directly with our support team.
+            </p>
+
+            <a href="tel:+256708111425">
+                +256 708111425
+            </a>
+
+        </div>
+
+
+        <div class="support-card">
+
+            <div class="support-icon">✉️</div>
+
+            <h3>Email</h3>
+
+            <p>
+                Send your questions by email.
+            </p>
+
+            <a href="mailto:info@shamirah.com">
+                info@shamirah.com
+            </a>
+
+        </div>
+
+
+        <div class="support-card">
+
+            <div class="support-icon">📍</div>
+
+            <h3>Visit Us</h3>
+
+            <p>
+                Visit our location for in-person support.
+            </p>
+
+            <a href="contact.html">
+                Kyotera, Uganda
+            </a>
+
+        </div>
+
+
+        <div class="support-card">
+
+            <div class="support-icon">🕒</div>
+
+            <h3>Working Hours</h3>
+
+            <p>
+                We are available during business hours.
+            </p>
+
+            <a href="contact.html">
+                Mon - Sat: 8AM - 6PM
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- SUPPORT FORM -->
+
+<section class="section support-section">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>Submit a Support Request</h2>
+
+        <p>
+            Complete the form below and our team will respond to your request.
+        </p>
+
+    </div>
+
+
+    <div class="support-layout">
+
+
+        <div class="support-info">
+
+            <h3>Need Technical Help?</h3>
+
+            <p>
+                Tell us what you need and our team will use
+                your request to understand the support required.
+            </p>
+
+            <p>
+                📞 +256 708111425
+            </p>
+
+            <p>
+                ✉ info@shamirah.com
+            </p>
+
+            <p>
+                📍 Kyotera, Uganda
+            </p>
+
+
+            <div class="business-hours">
+
+                <h3>Business Hours</h3>
+
+                <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+
+                <p>Saturday: 8:00 AM - 6:00 PM</p>
+
+                <p>Sunday: Closed</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-box">
+
+            <div class="success" id="success">
+                Support request submitted successfully.
+            </div>
+
+
+            <form id="supportForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number *
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="+256..."
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address *
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="example@email.com"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="category">
+                            Support Category *
+                        </label>
+
+                        <select id="category" required>
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="Product Information">
+                                Product Information
+                            </option>
+
+                            <option value="Order">
+                                Order
+                            </option>
+
+                            <option value="Delivery">
+                                Delivery
+                            </option>
+
+                            <option value="Warranty">
+                                Warranty
+                            </option>
+
+                            <option value="Repair">
+                                Repair
+                            </option>
+
+                            <option value="Installation">
+                                Installation
+                            </option>
+
+                            <option value="Technical Support">
+                                Technical Support
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        Subject *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        placeholder="What do you need help with?"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message *
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Describe your question or problem..."
+                        required></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary submit-btn">
+
+                    Submit Support Request
+
+                </button>
+
+            </form>
+
+
+            <div class="ticket" id="ticket"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <h2>Still Need Help?</h2>
+
+    <p>
+        Visit our Contact page for complete company information.
+    </p>
+
+    <a
+        href="contact.html"
+        class="btn btn-light">
+        Go To Contact Page
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-grid">
+
+    <div class="footer-col">
+
+        <h3>Shamirah Electronics Company</h3>
+
+        <p>
+            Smart Technology. Simple Life.
+        </p>
+
+        <p>
+            Your trusted destination for modern electronics,
+            professional services and technical support.
+        </p>
+
+    </div>
+
+
+    <div class="footer-col">
+
+        <h3>Contact</h3>
+
+        <p>📍 Kyotera, Uganda</p>
+
+        <p>📞 +256 708111425</p>
+
+        <p>✉ info@shamirah.com</p>
+
+    </div>
+
+</div>
+
+
+<div class="copyright">
+
+    © 2026 Shamirah Electronics Company.
+    All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+<!-- TOAST -->
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+/* ==========================================
+   MOBILE MENU
+========================================== */
+
+const menuButton = document.getElementById("menuButton");
+const navLinks = document.getElementById("navLinks");
+
+menuButton.addEventListener("click", function(){
+
+    navLinks.classList.toggle("show");
+
+});
+
+
+document.querySelectorAll("#navLinks a").forEach(function(link){
+
+    link.addEventListener("click", function(){
+
+        navLinks.classList.remove("show");
+
+    });
+
+});
+
+
+/* ==========================================
+   FAQ ACCORDION
+========================================== */
+
+document.querySelectorAll(".faq-question").forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+        const currentItem = button.closest(".faq-item");
+
+        document.querySelectorAll(".faq-item").forEach(function(item){
+
+            if(item !== currentItem){
+
+                item.classList.remove("open");
+
+            }
+
+        });
+
+        currentItem.classList.toggle("open");
+
+    });
+
+});
+
+
+/* ==========================================
+   FAQ FILTER + SEARCH
+========================================== */
+
+let selectedCategory = "all";
+
+const searchInput = document.getElementById("faqSearch");
+const filterButtons = document.querySelectorAll(".filter");
+const faqItems = document.querySelectorAll(".faq-item");
+const noResults = document.getElementById("noResults");
+
+
+function displayFAQs(){
+
+    const searchText =
+        searchInput.value.toLowerCase().trim();
+
+    let visible = 0;
+
+
+    faqItems.forEach(function(item){
+
+        const category =
+            item.getAttribute("data-category");
+
+        const text =
+            item.innerText.toLowerCase();
+
+
+        const categoryMatch =
+            selectedCategory === "all" ||
+            category === selectedCategory;
+
+
+        const searchMatch =
+            text.includes(searchText);
+
+
+        if(categoryMatch && searchMatch){
+
+            item.style.display = "block";
+
+            visible++;
+
+        }else{
+
+            item.style.display = "none";
+
+            item.classList.remove("open");
+
+        }
+
+    });
+
+
+    if(visible === 0){
+
+        noResults.style.display = "block";
+
+    }else{
+
+        noResults.style.display = "none";
+
+    }
+
+}
+
+
+searchInput.addEventListener("input", displayFAQs);
+
+
+filterButtons.forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+        filterButtons.forEach(function(btn){
+
+            btn.classList.remove("active");
+
+        });
+
+
+        button.classList.add("active");
+
+
+        selectedCategory =
+            button.getAttribute("data-category");
+
+
+        displayFAQs();
+
+    });
+
+});
+
+
+/* ==========================================
+   SUPPORT FORM
+========================================== */
+
+const supportForm =
+    document.getElementById("supportForm");
+
+
+supportForm.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const category =
+        document.getElementById("category").value;
+
+    const subject =
+        document.getElementById("subject").value.trim();
+
+    const message =
+        document.getElementById("message").value.trim();
+
+
+    if(
+        !name ||
+        !phone ||
+        !email ||
+        !category ||
+        !subject ||
+        !message
+    ){
+
+        showToast("Please complete all required fields.");
+
+        return;
+
+    }
+
+
+    const phonePattern =
+        /^[0-9+\-\s()]{7,20}$/;
+
+
+    if(!phonePattern.test(phone)){
+
+        showToast("Please enter a valid phone number.");
+
+        return;
+
+    }
+
+
+    const ticketNumber =
+        "SHM-" +
+        new Date().getFullYear() +
+        "-" +
+        Math.floor(10000 + Math.random() * 90000);
+
+
+    document.getElementById("success").style.display =
+        "block";
+
+
+    const ticket =
+        document.getElementById("ticket");
+
+
+    ticket.innerHTML =
+        "<strong>Support Request Received!</strong><br><br>" +
+
+        "Ticket Number: <strong>" +
+        safe(ticketNumber) +
+        "</strong><br><br>" +
+
+        "Customer: " +
+        safe(name) +
+        "<br>" +
+
+        "Category: " +
+        safe(category) +
+        "<br>" +
+
+        "Subject: " +
+        safe(subject) +
+        "<br><br>" +
+
+        "Please keep this ticket number for reference.";
+
+
+    ticket.style.display = "block";
+
+
+    supportForm.reset();
+
+
+    showToast("Support request submitted successfully.");
+
+});
+
+
+/* ==========================================
+   SAFE TEXT
+========================================== */
+
+function safe(value){
+
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* ==========================================
+   TOAST
+========================================== */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+
+/* ==========================================
+   CART COUNT
+========================================== */
+
+function updateCartCount(){
+
+    const cartCount =
+        document.getElementById("cartCount");
+
+
+    let cart = [];
+
+
+    try{
+
+        const savedCart =
+            localStorage.getItem("shamirahCart");
+
+
+        if(savedCart){
+
+            const parsed =
+                JSON.parse(savedCart);
+
+
+            if(Array.isArray(parsed)){
+
+                cart = parsed;
+
+            }
+
+        }
+
+    }catch(error){
+
+        cart = [];
+
+    }
+
+
+    let totalQuantity = 0;
+
+
+    cart.forEach(function(item){
+
+        const quantity =
+            Number(item.quantity);
+
+
+        if(!isNaN(quantity) && quantity > 0){
+
+            totalQuantity += quantity;
+
+        }else{
+
+            totalQuantity++;
+
+        }
+
+    });
+
+
+    cartCount.textContent =
+        totalQuantity;
+
+}
+
+
+updateCartCount();
+
+
+/* Update cart if another tab changes it */
+
+window.addEventListener("storage", function(event){
+
+    if(event.key === "shamirahCart"){
+
+        updateCartCount();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

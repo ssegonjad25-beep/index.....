@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Offers | Shamirah Electronics Company</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fb;
+    color:#222;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+select{
+    font-family:inherit;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+    background:#071a35;
+    color:white;
+    padding:9px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:14px;
+}
+
+.topbar span{
+    margin-right:18px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.1);
+}
+
+.navbar{
+    width:90%;
+    max-width:1250px;
+    min-height:75px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+
+/* LOGO */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#d4a017;
+    color:#071a35;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:19px;
+}
+
+.logo-text h2{
+    color:#071a35;
+    font-size:20px;
+}
+
+.logo-text p{
+    color:#d4a017;
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+
+/* NAVIGATION */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#17233a;
+    font-weight:bold;
+    font-size:14px;
+    padding:9px 10px;
+    border-radius:5px;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    background:#071a35;
+    color:white;
+}
+
+.cart-button{
+    background:#d4a017 !important;
+    color:#071a35 !important;
+    position:relative;
+}
+
+.cart-count{
+    position:absolute;
+    top:-8px;
+    right:-5px;
+    background:#e53935;
+    color:white;
+    width:21px;
+    height:21px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:11px;
+}
+
+
+/* MOBILE MENU */
+
+.menu-btn{
+    display:none;
+    background:#071a35;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:5px;
+    font-size:23px;
+    cursor:pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:430px;
+    background:
+        linear-gradient(rgba(3,17,38,.80),rgba(3,17,38,.80)),
+        url("CALL.PNG")
+        center/cover;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:50px 20px;
+}
+
+.hero-content{
+    max-width:850px;
+    animation:fadeUp 1s ease;
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#d4a017;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:700px;
+    margin:auto auto 25px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+
+/* BUTTONS */
+
+.btn{
+    border:none;
+    padding:13px 23px;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+    display:inline-block;
+}
+
+.btn-gold{
+    background:#d4a017;
+    color:#071a35;
+}
+
+.btn-gold:hover{
+    background:#e7bb35;
+    transform:translateY(-3px);
+}
+
+.btn-dark{
+    background:#071a35;
+    color:white;
+}
+
+.btn-dark:hover{
+    background:#102e56;
+}
+
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
+section{
+    padding:70px 6%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    color:#071a35;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#666;
+    max-width:700px;
+    margin:auto;
+}
+
+
+/* =========================
+   OFFER CARDS
+========================= */
+
+.offers-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.offer-card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.35s;
+    position:relative;
+}
+
+.offer-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.offer-image{
+    height:220px;
+    overflow:hidden;
+    position:relative;
+}
+
+.offer-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.offer-card:hover .offer-image img{
+    transform:scale(1.08);
+}
+
+.discount{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:#e53935;
+    color:white;
+    padding:7px 12px;
+    border-radius:5px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.offer-content{
+    padding:25px;
+}
+
+.offer-content h3{
+    color:#071a35;
+    margin-bottom:8px;
+}
+
+.offer-content p{
+    color:#666;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.price{
+    margin-bottom:18px;
+}
+
+.old-price{
+    color:#999;
+    text-decoration:line-through;
+    font-size:14px;
+    margin-right:8px;
+}
+
+.new-price{
+    color:#d4a017;
+    font-size:21px;
+    font-weight:bold;
+}
+
+
+/* =========================
+   PACKAGES
+========================= */
+
+.package-section{
+    background:#f0f3f8;
+}
+
+.package-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.package{
+    background:white;
+    border-radius:12px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+    border-top:5px solid #d4a017;
+    transition:.3s;
+}
+
+.package:hover{
+    transform:translateY(-6px);
+}
+
+.package-icon{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.package h3{
+    color:#071a35;
+    margin-bottom:10px;
+}
+
+.package p{
+    color:#666;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.package-price{
+    color:#d4a017;
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+
+/* =========================
+   PROMOTION BANNER
+========================= */
+
+.promo{
+    max-width:1200px;
+    margin:auto;
+    background:
+        linear-gradient(90deg,rgba(7,26,53,.95),rgba(7,26,53,.65)),
+        url("CALL.PNG")
+        center/cover;
+
+    border-radius:15px;
+    padding:60px;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.promo h2{
+    color:#d4a017;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.promo p{
+    max-width:650px;
+    color:#e2e6ed;
+}
+
+
+/* =========================
+   OFFER INFORMATION
+========================= */
+
+.info-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.info-card{
+    background:white;
+    padding:28px;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+.info-card h3{
+    color:#071a35;
+    margin-bottom:10px;
+}
+
+.info-card p{
+    color:#666;
+    font-size:14px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#041126;
+    color:white;
+    padding:55px 6% 20px;
+}
+
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1.5fr;
+    gap:35px;
+}
+
+.footer-col h3{
+    color:#d4a017;
+    margin-bottom:18px;
+}
+
+.footer-col p{
+    color:#b9c3d2;
+    font-size:14px;
+    margin-bottom:9px;
+}
+
+.footer-bottom{
+    max-width:1200px;
+    margin:40px auto 0;
+    padding-top:20px;
+    border-top:1px solid #26344c;
+    text-align:center;
+    color:#8d99aa;
+    font-size:13px;
+}
+
+
+/* =========================
+   NOTIFICATION
+========================= */
+
+.notification{
+    position:fixed;
+    top:100px;
+    right:20px;
+    background:#071a35;
+    color:white;
+    padding:15px 22px;
+    border-left:4px solid #d4a017;
+    border-radius:6px;
+    display:none;
+    z-index:2000;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+    max-width:350px;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1050px){
+
+    .nav-links{
+        position:absolute;
+        top:75px;
+        left:0;
+        width:100%;
+        background:white;
+        display:none;
+        flex-direction:column;
+        padding:20px;
+        box-shadow:0 10px 20px rgba(0,0,0,.1);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .nav-links a{
+        width:100%;
+        text-align:center;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .offers-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .package-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .info-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .topbar{
+        flex-direction:column;
+        gap:5px;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    section{
+        padding:50px 5%;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
+
+    .offers-grid,
+    .package-grid,
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .promo{
+        padding:40px 25px;
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .promo h2{
+        font-size:28px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<div class="topbar">
+
+    <div>
+        <span>📍 Kyotera, Uganda</span>
+        <span>📞 +256 708111425</span>
+    </div>
+
+    <div>
+        <span>✉️ info@shamirah.com</span>
+        <span>Mon - Sat</span>
+    </div>
+
+</div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-icon">
+            SEC
+        </div>
+
+        <div class="logo-text">
+            <h2>SHAMIRAH</h2>
+            <p>ELECTRONICS COMPANY</p>
+        </div>
+
+    </a>
+
+
+    <button
+        class="menu-btn"
+        onclick="toggleMenu()"
+    >
+        ☰
+    </button>
+
+
+    <ul class="nav-links" id="navLinks">
+
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+
+        <li>
+            <a href="about.html">About Us</a>
+        </li>
+
+        <li>
+            <a href="products.html">Products</a>
+        </li>
+
+        <li>
+            <a href="services.html">Services</a>
+        </li>
+
+        <li>
+            <a href="offers.html" class="active">Offers</a>
+        </li>
+
+        <li>
+            <a href="gallery.html">Gallery</a>
+        </li>
+
+        <li>
+            <a href="faq.html">FAQ & Support</a>
+        </li>
+
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+
+        <li>
+            <a href="products.html" class="cart-button">
+                🛒 Cart
+                <span
+                    class="cart-count"
+                    id="cartCount"
+                >0</span>
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Exclusive <span>Electronics Offers</span>
+        </h1>
+
+        <p>
+            Discover selected electronics, special discounts
+            and technology packages available from Shamirah
+            Electronics Company.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#offers"
+                class="btn btn-gold"
+            >
+                View Offers
+            </a>
+
+            <a
+                href="products.html"
+                class="btn"
+                style="border:2px solid white;color:white;"
+            >
+                Shop Products
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SPECIAL OFFERS
+========================= -->
+
+<section id="offers">
+
+    <div class="section-title">
+
+        <h2>Featured Offers</h2>
+
+        <p>
+            Save on selected electronics while stocks and
+            promotional quantities last.
+        </p>
+
+    </div>
+
+
+    <div class="offers-grid">
+
+
+        <!-- OFFER 1 -->
+
+        <div class="offer-card">
+
+            <div class="offer-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80"
+                    alt="Smartphone"
+                >
+
+                <span class="discount">
+                    15% OFF
+                </span>
+
+            </div>
+
+
+            <div class="offer-content">
+
+                <h3>Premium Smartphone</h3>
+
+                <p>
+                    Modern smartphone with a high-quality display,
+                    powerful performance and advanced connectivity.
+                </p>
+
+                <div class="price">
+
+                    <span class="old-price">
+                        UGX 1,700,000
+                    </span>
+
+                    <span class="new-price">
+                        UGX 1,450,000
+                    </span>
+
+                </div>
+
+                <button
+                    class="btn btn-dark"
+                    onclick="claimOffer('Premium Smartphone')"
+                >
+                    Claim Offer
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- OFFER 2 -->
+
+        <div class="offer-card">
+
+            <div class="offer-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+                    alt="Laptop"
+                >
+
+                <span class="discount">
+                    10% OFF
+                </span>
+
+            </div>
+
+
+            <div class="offer-content">
+
+                <h3>Professional Laptop</h3>
+
+                <p>
+                    Reliable laptop suitable for education,
+                    office work, business and everyday computing.
+                </p>
+
+                <div class="price">
+
+                    <span class="old-price">
+                        UGX 3,150,000
+                    </span>
+
+                    <span class="new-price">
+                        UGX 2,850,000
+                    </span>
+
+                </div>
+
+                <button
+                    class="btn btn-dark"
+                    onclick="claimOffer('Professional Laptop')"
+                >
+                    Claim Offer
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- OFFER 3 -->
+
+        <div class="offer-card">
+
+            <div class="offer-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=900&q=80"
+                    alt="Smart TV"
+                >
+
+                <span class="discount">
+                    12% OFF
+                </span>
+
+            </div>
+
+
+            <div class="offer-content">
+
+                <h3>Smart LED Television</h3>
+
+                <p>
+                    Enjoy entertainment with a modern smart television
+                    designed for home viewing.
+                </p>
+
+                <div class="price">
+
+                    <span class="old-price">
+                        UGX 2,100,000
+                    </span>
+
+                    <span class="new-price">
+                        UGX 1,850,000
+                    </span>
+
+                </div>
+
+                <button
+                    class="btn btn-dark"
+                    onclick="claimOffer('Smart LED Television')"
+                >
+                    Claim Offer
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- OFFER 4 -->
+
+        <div class="offer-card">
+
+            <div class="offer-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80"
+                    alt="Headphones"
+                >
+
+                <span class="discount">
+                    20% OFF
+                </span>
+
+            </div>
+
+
+            <div class="offer-content">
+
+                <h3>Wireless Headphones</h3>
+
+                <p>
+                    Comfortable wireless headphones suitable for
+                    music, communication and entertainment.
+                </p>
+
+                <div class="price">
+
+                    <span class="old-price">
+                        UGX 225,000
+                    </span>
+
+                    <span class="new-price">
+                        UGX 180,000
+                    </span>
+
+                </div>
+
+                <button
+                    class="btn btn-dark"
+                    onclick="claimOffer('Wireless Headphones')"
+                >
+                    Claim Offer
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- OFFER 5 -->
+
+        <div class="offer-card">
+
+            <div class="offer-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?auto=format&fit=crop&w=900&q=80"
+                    alt="Refrigerator"
+                >
+
+                <span class="discount">
+                    8% OFF
+                </span>
+
+            </div>
+
+
+            <div class="offer-content">
+
+                <h3>Double Door Refrigerator</h3>
+
+                <p>
+                    Spacious refrigeration solution designed for
+                    convenient household food storage.
+                </p>
+
+                <div class="price">
+
+                    <span class="old-price">
+                        UGX 1,800,000
+                    </span>
+
+                    <span class="new-price">
+                        UGX 1,650,000
+                    </span>
+
+                </div>
+
+                <button
+                    class="btn btn-dark"
+                    onclick="claimOffer('Double Door Refrigerator')"
+                >
+                    Claim Offer
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- OFFER 6 -->
+
+        <div class="offer-card">
+
+            <div class="offer-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=900&q=80"
+                    alt="Bluetooth Speaker"
+                >
+
+                <span class="discount">
+                    15% OFF
+                </span>
+
+            </div>
+
+
+            <div class="offer-content">
+
+                <h3>Bluetooth Speaker</h3>
+
+                <p>
+                    Portable audio solution for home entertainment,
+                    events and personal listening.
+                </p>
+
+                <div class="price">
+
+                    <span class="old-price">
+                        UGX 295,000
+                    </span>
+
+                    <span class="new-price">
+                        UGX 250,000
+                    </span>
+
+                </div>
+
+                <button
+                    class="btn btn-dark"
+                    onclick="claimOffer('Bluetooth Speaker')"
+                >
+                    Claim Offer
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PACKAGES
+========================= -->
+
+<section class="package-section">
+
+    <div class="section-title">
+
+        <h2>Special Technology Packages</h2>
+
+        <p>
+            Packages combine selected products and services
+            for convenient technology solutions.
+        </p>
+
+    </div>
+
+
+    <div class="package-grid">
+
+
+        <div class="package">
+
+            <div class="package-icon">
+                💼
+            </div>
+
+            <h3>Business Package</h3>
+
+            <p>
+                Designed for small businesses requiring basic
+                computing and office technology.
+            </p>
+
+            <div class="package-price">
+                UGX 3,500,000
+            </div>
+
+            <button
+                class="btn btn-gold"
+                onclick="claimOffer('Business Technology Package')"
+            >
+                Request Package
+            </button>
+
+        </div>
+
+
+        <div class="package">
+
+            <div class="package-icon">
+                🏠
+            </div>
+
+            <h3>Home Entertainment</h3>
+
+            <p>
+                A combination of entertainment electronics
+                suitable for modern homes.
+            </p>
+
+            <div class="package-price">
+                UGX 2,500,000
+            </div>
+
+            <button
+                class="btn btn-gold"
+                onclick="claimOffer('Home Entertainment Package')"
+            >
+                Request Package
+            </button>
+
+        </div>
+
+
+        <div class="package">
+
+            <div class="package-icon">
+                🎓
+            </div>
+
+            <h3>Student Package</h3>
+
+            <p>
+                Technology options suitable for learning,
+                research and everyday academic work.
+            </p>
+
+            <div class="package-price">
+                UGX 1,200,000
+            </div>
+
+            <button
+                class="btn btn-gold"
+                onclick="claimOffer('Student Technology Package')"
+            >
+                Request Package
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROMOTION BANNER
+========================= -->
+
+<section>
+
+    <div class="promo">
+
+        <div>
+
+            <h2>Upgrade Your Technology</h2>
+
+            <p>
+                Explore our products and services and find
+                technology that matches your home, education
+                or business requirements.
+            </p>
+
+        </div>
+
+
+        <a
+            href="products.html"
+            class="btn btn-gold"
+        >
+            Browse Products
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     OFFER INFORMATION
+========================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>Offer Information</h2>
+
+        <p>
+            Important information for customers using promotional offers.
+        </p>
+
+    </div>
+
+
+    <div class="info-grid">
+
+
+        <div class="info-card">
+
+            <h3>Limited Availability</h3>
+
+            <p>
+                Promotional prices may apply to selected products
+                and may be subject to available stock.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>Product Warranty</h3>
+
+            <p>
+                Warranty terms may differ depending on the product.
+                Customers should confirm applicable warranty
+                information before purchase.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>Need Assistance?</h3>
+
+            <p>
+                Contact our team for product information,
+                service requests or clarification about an offer.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div class="footer-col">
+
+            <h3>Shamirah Electronics</h3>
+
+            <p>
+                Smart Technology. Simple Life.
+            </p>
+
+            <p>
+                Professional electronics products,
+                services and technology solutions.
+            </p>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h3>Contact Us</h3>
+
+            <p>📍 Kyotera, Uganda</p>
+
+            <p>📞 +256 708111425</p>
+
+            <p>✉️ info@shamirah.com</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Shamirah Electronics Company.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- NOTIFICATION -->
+
+<div
+    class="notification"
+    id="notification"
+>
+</div>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+    const nav =
+        document.getElementById("navLinks");
+
+    nav.classList.toggle("show");
+
+}
+
+
+/* =========================
+   CART COUNT
+========================= */
+
+function updateCartCount(){
+
+    let cart =
+        JSON.parse(
+            localStorage.getItem("shamirahCart") || "[]"
+        );
+
+    let total = cart.reduce(
+        function(sum,item){
+
+            return sum + (item.quantity || 1);
+
+        },
+        0
+    );
+
+    document.getElementById("cartCount")
+        .textContent = total;
+
+}
+
+updateCartCount();
+
+
+/* =========================
+   OFFER CLAIM
+========================= */
+
+function claimOffer(product){
+
+    const notification =
+        document.getElementById("notification");
+
+    notification.innerHTML =
+        "✓ " + product +
+        " selected. Contact us to complete your order.";
+
+    notification.style.display = "block";
+
+
+    setTimeout(function(){
+
+        notification.style.display = "none";
+
+    },5000);
+
+}
+
+
+/* =========================
+   CLOSE MOBILE MENU
+========================= */
+
+document.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        function(){
+
+            document
+                .getElementById("navLinks")
+                .classList.remove("show");
+
+        }
+    );
+
+});
+
+</script>
+
+</body>
+</html>
